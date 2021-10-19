@@ -32,7 +32,7 @@ int main(int argc, char **argv){
 
         float peso[elementos];
         float altura[elementos];
-
+        float arreglo[elementos];
         for(int i=0 ; i<elementos ; i++ ){
             printf("Peso:");  
             scanf("%f", &peso[i]);
@@ -55,9 +55,21 @@ int main(int argc, char **argv){
             sum2 = altura[h]+ sum2 ;
  
         }
-        
+       
+       for(int i=0 ; i<elementos ; i++){
+           float calculo = peso[i]/(altura[i]*altura[i]);
+           arreglo[i]= calculo ;
+
+       }
         float imc = sum/(sum2*sum2);
-	
+        float max = arreglo[0];
+        
+	for(int i=1; i<elementos ;i++ ){
+            if(max<arreglo[i]){ 
+               max=arreglo[i];
+            }
+        }
+        max_imc=max;
 	
 	//No modifique estas lineas
 	//Guarde los resultados en las 
